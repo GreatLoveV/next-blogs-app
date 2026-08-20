@@ -8,11 +8,7 @@ const Blogs = async ({
 }) => {
   const { filter } = await searchParams;
 
-  const initialBlogs = getBlogs();
-  const filteredBlogs = filter
-    ? initialBlogs.filter((blog) => blog.title.toLowerCase().includes(filter))
-    : initialBlogs;
-  const blogs = filteredBlogs.toSorted((a, b) => b.likes - a.likes);
+  const blogs = await getBlogs(filter);
   return (
     <div>
       <form action="/blogs" method="get">
