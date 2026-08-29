@@ -18,7 +18,7 @@ const UserPage = async ({
     <div>
       <h2>{user.name}</h2>
       <p>Username: {user.username}</p>
-      <h3>Notes</h3>
+      <h3>Blogs</h3>
       <ul>
         {user.blogs.map((blog) => (
           <li key={blog.id}>
